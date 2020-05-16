@@ -1,16 +1,20 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
-  def index
 
+  def index
+    @activities = policy_scope(@activities) #o (Activity)
   end
 
   def new
     @activity = Activity.new
+    authorize @activity
   end
 
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
+    authorize @activity
     if @activity.save
       redirect_to activity_path(@activity)
     else
@@ -38,11 +42,12 @@ class ActivitiesController < ApplicationController
 
   private
 
-  def set_venue
+  def set_activity
     @activity = Activity.find(params[:id])
+    authorize @activity
   end
 
-  def venue_params
+  def activity_params
     params.require(:activity).permit(:name, :address, :description, :capacity)
   end
 end
