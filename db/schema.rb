@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_170500) do
+ActiveRecord::Schema.define(version: 2020_05_16_201612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string "name"
     t.text "description"
     t.integer "capacity"
     t.integer "donation"
@@ -24,27 +23,51 @@ ActiveRecord::Schema.define(version: 2020_05_16_170500) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "address"
+    t.string "title"
+    t.text "who_description"
+    t.text "why_description"
+    t.text "what_description"
+    t.string "meeting_address"
+    t.string "activity_address"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "requirements"
+    t.bigint "category_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["category_id"], name: "index_activities_on_category_id"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "price"
-    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.bigint "activity_id"
+    t.integer "donation"
+    t.date "start_date"
+    t.date "end_date"
     t.index ["activity_id"], name: "index_bookings_on_activity_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
+    t.text "description"
     t.integer "rating"
     t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "booking_id"
     t.index ["activity_id"], name: "index_reviews_on_activity_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,12 +79,16 @@ ActiveRecord::Schema.define(version: 2020_05_16_170500) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname"
+    t.text "persona_description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "categories"
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "activities"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end
