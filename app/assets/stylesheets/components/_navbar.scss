@@ -1,12 +1,80 @@
+.containernav {
+  position: static;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  z-index: 100;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  justify-content: center;
+
+}
+#navbarSupportedContent > ul > div {
+  color: white;
 }
 
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: white;
+    padding-right: 50px;
+}
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.containernav {
+  padding: none;
+}
+
+
+#navbarSupportedContent > ul > div > li:nth-child(1) {
+text-align: center;
+vertical-align: middle;
+line-height: 40px;
+color: white;
+}
+
+#navbarSupportedContent > ul > div > li:nth-child(2) {
+text-align: center;
+vertical-align: middle;
+line-height: 40px;
+}
+
+#navbarSupportedContent > ul > div > li:nth-child(4) {
+text-align: center;
+vertical-align: middle;
+line-height: 40px;
+}
+
+#navbarSupportedContent > ul > div > li:nth-child(5) {
+text-align: center;
+vertical-align: middle;
+line-height: 40px;
+}
+
+#name {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+color: white;
+--breakpoint-xs: 0;
+--breakpoint-sm: 576px;
+--breakpoint-md: 768px;
+--breakpoint-lg: 992px;
+--breakpoint-xl: 1200px;
+--font-family-sans-serif: "Work Sans", "Helvetica", "sans-serif";
+--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+font-family: "Work Sans", "Helvetica", "sans-serif";
+font-weight: 500;
+list-style: none;
+box-sizing: border-box;
+display: inline-block;
+padding-top: none;
+padding-bottom: none;
+margin-right: 1rem;
+margin-top: none;
+border-top: none;
+font-size: 1.25rem;
+line-height: inherit;
+white-space: nowrap;
 }
