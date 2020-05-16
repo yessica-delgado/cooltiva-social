@@ -1,0 +1,15 @@
+<div class="create-form" >
+
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :capacity %>
+  <%= f.input :donation %>
+
+  <div class="create-btn" >
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
+
+</div>
