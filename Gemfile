@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '6.0.3'
 gem 'redis'
 
+gem 'geocoder'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

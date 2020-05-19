@@ -3,7 +3,15 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
+    @activities = Activities.geocoded
     @activities = policy_scope(@activities) #o (Activity)
+
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
   end
 
   def new
