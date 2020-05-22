@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activities.geocoded
-    @activities = policy_scope(@activities) #o (Activity)
+    @activities = policy_scope(Activity)
+    @activities = @activities.geocoded
 
     @markers = @activities.map do |activity|
       {
@@ -34,6 +34,7 @@ class ActivitiesController < ApplicationController
     @booking = Booking.new
     @reviews = Review.where(venue_id: params[:id])
   end
+
 
   def edit
   end
