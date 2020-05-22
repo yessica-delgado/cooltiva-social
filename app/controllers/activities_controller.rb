@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activities.geocoded
-    @activities = policy_scope(@activities) #o (Activity)
+    #@activities = Activity.geocoded Merge with lilia
+    @activities = policy_scope(Activity)
 
     @markers = @activities.map do |activity|
       {
@@ -56,6 +56,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:title, :who_description, :why_description, :what_description, :meeting_address, :activity_address, :capacity, :capacity, :donation, :start_date, :end_date, :requirements)
+    params.require(:activity).permit(:title, :who_description, :why_description, :what_description, :meeting_address, :activity_address, :capacity, :capacity, :donation, :start_date, :end_date, :requirements, :category_id)
   end
 end

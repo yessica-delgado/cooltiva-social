@@ -3,3 +3,16 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['pk.eyJ1IjoibGlsaWFqZXIiLCJhIjoiY2thZWh1cHBzMDF6aTJ0bzRodGRnb2xsaSJ9.F65XgcuTP2-LYN0J1P3UIw
 '] %>"></div>
+
+<div >
+  <h1><%= @activity.title %></h1>
+  <h1><%= @activity.category_id %></h1>
+  <h1><%= @activity.who_description %></h1>
+  <h1><%= @activity.why_description %></h1>
+  <h1><%= @activity.what_description %></h1>
+  <h1><%= @activity.meeting_address %></h1>
+  <h1><%= @activity.activity_address %></h1>
+  <h1><%= @activity.donation %></h1>
+  <h1><%= @activity.start_date %></h1>
+  <h1><%= @activity.end_date %></h1>
+</div>
