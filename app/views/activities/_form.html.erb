@@ -1,11 +1,18 @@
 <div class="create-form" >
 
 <%= simple_form_for(@activity) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
+  <%= f.input :title %>
+  <%= f.input :categories %>
+  <%= f.input :who_description %>
+  <%= f.input :why_description %>
+  <%= f.input :what_description %>
+  <%= f.input :meeting_address %>
+  <%= f.input :activity_address %>
   <%= f.input :capacity %>
   <%= f.input :donation %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :requirements %>
 
   <div class="create-btn" >
     <%= f.submit class: "btn btn-primary"%>
