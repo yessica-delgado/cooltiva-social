@@ -4,3 +4,20 @@
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
+<div >
+  <h1><%= @user.nickname %></h1>
+  <h1><%= @activity.title %></h1>
+  <h1><%= @activity.category.name %></h1>
+  <h1><%= @activity.website %></h1>
+  <h1><%= @activity.who_description %></h1>
+  <h1><%= @activity.why_description %></h1>
+  <h1><%= @activity.what_description %></h1>
+  <h1><%= @activity.start_date %></h1>
+  <h1><%= @activity.end_date %></h1>
+  <h1><%= @activity.meeting_address %></h1>
+  <h1><%= @activity.activity_address %></h1>
+  <h1><%= @activity.donation %></h1>
+  <h1><%= @activity.requirements %></h1>
+</div>

@@ -31,6 +31,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @user = @activity.user
     @booking = Booking.new
     @reviews = Review.where(venue_id: params[:id])
     @markers = [{  lat: @venue.latitude, lng: @venue.longitude }]
@@ -58,6 +59,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:title, :who_description, :why_description, :what_description, :meeting_address, :activity_address, :capacity, :capacity, :donation, :start_date, :end_date, :requirements)
+    params.require(:activity).permit(:title, :who_description, :why_description, :what_description, :meeting_address, :activity_address, :capacity, :capacity, :donation, :start_date, :end_date, :requirements, :category_id, :website)
   end
 end
