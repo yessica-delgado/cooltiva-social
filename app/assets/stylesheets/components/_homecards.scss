@@ -1,0 +1,125 @@
+//-- Cards Assist / Find / Shop / Reviews -->
+
+.container-cards-title {
+  position: relative;
+  justify-content: center;
+  height: 90vh;
+}
+
+.card {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.container-cards {
+  max-width: 100%;
+}
+
+body > div.container-cards-title > h1 {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  text-align: center;
+  color: #3E3E3E;
+}
+
+body > div.container-categories > h1 {
+  text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(1) > img {
+  height: 200px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(2) > img {
+  height: 200px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(3) > img {
+  height: 200px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(4) > img {
+  height: 200px;
+}
+
+
+body > div.container-cards-title > div > div > div:nth-child(1) > div > p {
+  text-align: center;
+  height: 80px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(2) > div > p {
+  text-align: center;
+  height: 80px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(3) > div > p {
+  text-align: center;
+  height: 80px;
+}
+
+body > div.container-cards-title > div > div > div:nth-child(4) > div > p {
+  text-align: center;
+  height: 80px;
+}
+
+//END Cards Assist / Find / Shop / Reviews -->
+
+//-- Cards Categories -->
+
+body > div.categories.d-flex.justify-content-center {
+  position: relative;
+  padding-top: none;
+  height: 180px;
+  margin-top: none;
+}
+
+
+.container-categories {
+  padding-top: none;
+  margin-top: none;
+  position: relative;
+  padding: 30px;
+  width: 120vh;
+  border-radius: 30px;
+}
+
+body > div.container-categories > div > div > p {
+  justify-content: space-between;
+  border-color: gray;
+}
+
+body > div.row.d-flex.justify-content-center > div > h1 {
+  margin-bottom: 30px;
+  color: #3E3E3E;
+  padding-top: none;
+}
+
+
+
+//END Cards Categories -->
+
+body > div:nth-child(5) > div {
+  height: 180px;
+  width: 950px;
+}
+
+.card-img {
+  filter: brightness(60%);
+}
+
+body > div:nth-child(5) > div > div > h1 {
+  margin-top: 100px;
+}
+
+body > div:nth-child(5) > div > div > a {
+  width: 200px;
+}
