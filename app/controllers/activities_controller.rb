@@ -33,8 +33,8 @@ class ActivitiesController < ApplicationController
   def show
     @user = @activity.user
     @booking = Booking.new
-    @reviews = Review.where(venue_id: params[:id])
-    @markers = [{  lat: @venue.latitude, lng: @venue.longitude }]
+    @reviews = Review.where(activity_id: params[:id])
+    @markers = [{  lat: @activity.latitude, lng: @activity.longitude }]
   end
 
 
