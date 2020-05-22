@@ -2,7 +2,8 @@ class Activity < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookings
   belongs_to :user
+  belongs_to :category
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-CATEGORY = [["Responsible Consumption"], ["Donations"], ["Shared Knowledge"], ["Social Working"]]
+
 end
