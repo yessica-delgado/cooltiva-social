@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    #@activities = Activity.geocoded Merge with lilia
     @activities = policy_scope(Activity)
+    @activities = @activities.geocoded
 
     @markers = @activities.map do |activity|
       {
@@ -34,7 +34,9 @@ class ActivitiesController < ApplicationController
     @user = @activity.user
     @booking = Booking.new
     @reviews = Review.where(venue_id: params[:id])
+    @markers = [{  lat: @venue.latitude, lng: @venue.longitude }]
   end
+
 
   def edit
   end
