@@ -7,5 +7,6 @@
 <% @activities.each do |activity| %>
   <div>
     <h1> <%= activity.title %> </h1>
+    <p> Category: <%= activity.category.name %></p>
   </div>
 <% end %>
