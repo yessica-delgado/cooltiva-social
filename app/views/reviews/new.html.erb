@@ -1,0 +1,9 @@
+<div class="review-form" align="center">
+  <h3>Review <%= @activity.title %></h3>
+  <br/><br/>
+  <%= simple_form_for [ @activity, @review ] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.submit "Submit review", class: "btn btn-primary"%>
+<% end %>
+</div>

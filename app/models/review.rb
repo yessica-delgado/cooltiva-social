@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :activity
-  validates :content, presence: true
+  validates :description, presence: true
 end
