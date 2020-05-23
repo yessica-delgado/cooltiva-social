@@ -1,18 +1,27 @@
 //-- Cards Assist / Find / Shop / Reviews -->
 
+.img-card {
+  border-radius: 10px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
 .container-cards-title {
   position: relative;
   justify-content: center;
-  height: 90vh;
+  padding-bottom: 100px;
+
+}
+
+body > div.container-cards-title > div > div > div:nth-child(1) > div > p {
+    text-align: center;
+    height: auto !important;
 }
 
 .card {
   border-radius: 10px;
   margin: 10px;
-}
-
-.card img {
-    border-radius: 10px;
 }
 
 .container-cards {
@@ -24,10 +33,6 @@ body > div.container-cards-title > h1 {
   margin-bottom: 10vh;
   text-align: center;
   color: #3E3E3E;
-}
-
-body > div.container-categories > h1 {
-  text-align: center;
 }
 
 h5 {
@@ -75,13 +80,18 @@ body > div.container-cards-title > div > div > div:nth-child(4) > div > p {
 
 //-- Cards Categories -->
 
-body > div.categories.d-flex.justify-content-center {
+.categories.d-flex.justify-content-center {
   position: relative;
   padding-top: none;
-  height: 180px;
+  //height: 180px;
   margin-top: none;
+  margin-bottom: 70px;
 }
 
+.container-categories > h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
 .container-categories {
   padding-top: none;
@@ -92,12 +102,12 @@ body > div.categories.d-flex.justify-content-center {
   border-radius: 30px;
 }
 
-body > div.container-categories > div > div > p {
+.container-categories > div > div > p {
   justify-content: space-between;
   border-color: gray;
 }
 
-body > div.row.d-flex.justify-content-center > div > h1 {
+.row.d-flex.justify-content-center > div > h1 {
   margin-bottom: 30px;
   color: #3E3E3E;
   padding-top: none;
@@ -107,8 +117,8 @@ body > div.row.d-flex.justify-content-center > div > h1 {
 
 //END Cards Categories -->
 
-body > div:nth-child(5) > div {
-  height: 180px;
+.card-notsure {
+  height: auto !important;
   width: 950px;
 }
 
@@ -123,3 +133,5 @@ body > div:nth-child(5) > div > div > h1 {
 body > div:nth-child(5) > div > div > a {
   width: 200px;
 }
+
+
