@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+cloudinary:
+  service: Cloudinary
+=======
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
@@ -32,3 +36,7 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+cloudinary:
+  service: Cloudinary
+>>>>>>> 88d3c12ae1c93ce2158465a5110f7ab3966a8275
