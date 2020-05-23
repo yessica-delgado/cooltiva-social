@@ -1,4 +1,55 @@
 .page-footer {
-  display: flex;
+  margin-top: 45px;
+  background-color: #2C2C2C;
+  color: lightgray;
+  font-size: 12px;
+}
 
+.address-and-form-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  padding-right: 28px;
+  box-sizing: border-box;
+  > div {
+    flex-basis: 25%;
+  }
+}
+
+.suscribe-text {
+  font-size: 15px;
+}
+
+.form-control {
+  background-color: transparent;
+  margin-top: 3px;
+}
+
+.button-form {
+  margin-left: 5px;
+}
+
+.copyright-and-icons-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid white;
+  padding: 16px;
+  box-sizing: border-box;
+  > div {
+    flex-basis: 25%;
+  }
+}
+
+.icons-container {
+  vertical-align: center;
+}
+
+.address-text-container {
+  flex-basis: 40%;
+  padding-top: 10px;
+}
+
+i {
+  margin-left: 10px;
+  margin-right: 10px;
 }
