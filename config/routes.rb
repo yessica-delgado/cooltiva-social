@@ -5,12 +5,10 @@ Rails.application.routes.draw do
 
   resources :users
     resources :activities  do
-      resources :bookings, only: [ :new, :create ]
+      resources :bookings, only: [ :create ]
       resources :reviews, only: [ :new, :create ]
   end
   resources :pages, only: [:home]
-  resources :bookings, only: [ :show] do
-    resources :reviews, only: [ :new, :create ]
-  end
+  resources :bookings, only: [ :index]
 end
 
