@@ -9,7 +9,7 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <div class="carousel-inner" id="carousel" style="height: 500px">
+    <div class="carousel-inner" id="carousel" style="height: 500px; width: 100%">
       <div class="carousel-item active">
          <%= cl_image_tag(@activity.photos[0].key)%>
       </div>
@@ -29,14 +29,14 @@
     </a>
 <
 
-<div class= "container">
-     <div id="map"
+<div class= "container mt-5">
+     <div class="mb-0" id="map"
         style="width: 30%; height: 300px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    <div class=col-md-6 id= "user-info">
-      <h4>This activity was created by <%= @user.nickname %></h4>
+    <div class="col-md-6 mt-2" id= "user-info">
+      <h2>This activity was created by <%= @user.nickname %></h2>
       <p>Click on the avatar to chat with him</p>
       <div class= "user-description">
         <p> <%= @activity.user.persona_description %> </p>
@@ -46,6 +46,7 @@
     </div>
 </div>
 
+<div class= "m-5 p-5">
 <div class="container-fluid px-lg-5">
   <div class="row mx-lg-n5 align-items-center" >
     <div class="col-2 py-3 px-lg-5">  <h1>Who</h1> </div>
@@ -76,13 +77,17 @@
   </div>
 <div class="row mx-lg-n5 align-items-center">
  <div class="col-2 py-3 px-lg-5">  <h1>Where</h1> </div>
-  <div class="col py-3 px-lg-5">  <p>Meeting point: <%= @activity.meeting_address %></p>
-   <o>Activity: <%= @activity.activity_address %></p> </div>
+  <div class="col py-3 px-lg-5">  <p>Meeting point: <%= link_to @activity.meeting_address %></p>
+   <o>Activity: <%= link_to @activity.activity_address %></p> </div>
 </div>
-<div>
-  <p>Requirements for this activity: <%= @activity.requirements %></p>
+  <div class="row mx-lg-n5 align-items-center">
+    <div class="col-2 py-3 px-lg-5">  <h1>Donation:</h1> </div>
+    <div class="col py-3 px-lg-5">   <p>$<%= @activity.donation %>.00</p> </div>
+  </div>
+  <div>
+  <h3>Requirements for this activity:</h3> <p> <%= @activity.requirements %></p>
+  </div>
 </div>
-  <h1>Donation: <%= @activity.donation %></h1>
 </div>
 
 
