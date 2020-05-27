@@ -10,13 +10,11 @@
 </div>
 </div>
 
-<div class =container>
 <% @activities.each do |activity| %>
   <div>
-        <%= cl_image_tag(activity.photos[0].key)%>
+    <%= cl_image_tag(activity.photos[0].key)%>
    <h1> <%= link_to activity.title, activity_path(activity) %> </h1>
     <p> Description: <%= activity.who_description %></p>
     <p> Category: <%= activity.category.name %></p>
   </div>
-</div>
 <% end %>
