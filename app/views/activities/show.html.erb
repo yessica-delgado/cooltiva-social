@@ -11,13 +11,6 @@
       <% @activity.photos.each do |photo| %>
         <div class="carousel-item">
           <%= cl_image_tag(photo.key)%>
-       <!--  </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src=" <%= cl_image_path photo.key %> " alt="Second slide">
-          </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="https://placeimg.com/1080/500/nature" alt="Third slide">
-        </div> -->
         </div>
       <% end %>
     </div>
@@ -39,6 +32,7 @@
 
 <div >
   <h1>This activity was created by <%= @user.nickname %></h1>
+  <h1><%= @user.persona_description %></h1>
   <h1><%= @activity.title %></h1>
   <h1>Category: <%= @activity.category.name %></h1>
   <h1>Web site available: <%= @activity.website %></h1>
