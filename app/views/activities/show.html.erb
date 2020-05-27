@@ -11,7 +11,7 @@
     </ol>
     <div class="carousel-inner" id="carousel" style="height: 500px">
       <div class="carousel-item active">
-       <%= cl_image_tag(activity.photos[0].key)%>
+       <%= cl_image_tag(@activity.photos[0].key)%>
       </div>
     </div>
       <% @activity.photos.each do |photo| %>
