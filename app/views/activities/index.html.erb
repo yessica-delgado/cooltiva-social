@@ -15,7 +15,7 @@
   <div>
         <%= cl_image_tag(activity.photos[0].key)%>
    <h1> <%= link_to activity.title, activity_path(activity) %> </h1>
-    <p> Category: <%= activity.who_description %></p>
+    <p> Description: <%= activity.who_description %></p>
     <p> Category: <%= activity.category.name %></p>
   </div>
 </div>
