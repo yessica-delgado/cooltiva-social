@@ -1,14 +1,22 @@
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class= container-fluid>
+  <div class= row >
+  <div class= col-md-6><h1>Find the activities in your city below</h1> </div>
+  <div class= col-md-6 id="map"
+      style="width: 100%; height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+</div>
 
+<div class =container>
 <% @activities.each do |activity| %>
   <div>
-    <%= cl_image_tag(activity.photos[0].key)%>
+        <%= cl_image_tag(activity.photos[0].key)%>
    <h1> <%= link_to activity.title, activity_path(activity) %> </h1>
     <p> Category: <%= activity.who_description %></p>
     <p> Category: <%= activity.category.name %></p>
   </div>
+</div>
 <% end %>

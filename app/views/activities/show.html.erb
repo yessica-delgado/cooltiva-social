@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -6,7 +11,9 @@
     </ol>
     <div class="carousel-inner" id="carousel" style="height: 500px">
       <div class="carousel-item active">
-         <%= cl_image_tag(@activity.photos[0].key)%>
+       <%= cl_image_tag(activity.photos[0].key)%>
+
+
       </div>
       <% @activity.photos.each do |photo| %>
         <div class="carousel-item">
@@ -29,26 +36,65 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
+<
 
+<div class= "container">
      <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
-<div >
-  <h1>This activity was created by <%= @user.nickname %></h1>
-  <h1><%= @activity.title %></h1>
-  <h1>Category: <%= @activity.category.name %></h1>
-  <h1>Web site available: <%= @activity.website %></h1>
-  <h1><%= @activity.who_description %></h1>
-  <h1><%= @activity.why_description %></h1>
-  <h1><%= @activity.what_description %></h1>
-  <h1>From: <%= @activity.start_date %></h1>
-  <h1>To: <%= @activity.end_date %></h1>
-  <h1>Meeting point: <%= @activity.meeting_address %></h1>
-  <h1>Activity: <%= @activity.activity_address %></h1>
-  <h1>Donation: <%= @activity.donation %></h1>
-  <h1>Requirements: <%= @activity.requirements %></h1>
+        style="width: 30%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    <div class=col-md-6 id= "user-info">
+      <h4>This activity was created by <%= @user.nickname %></h4>
+      <p>Click on the avatar to chat with him</p>
+      <div class= "user-description">
+        <p> <%= @activity.user.persona_description %> </p>
+        <p> Category: <%= link_to @activity.category.name, activity_path(@activity.category) %></p>
+        <p>Web site available: <%= link_to @activity.website, @activity.website %></p>
+      </div>
+    </div>
 </div>
+
+<div class="container-fluid px-lg-5">
+  <div class="row mx-lg-n5 align-items-center" >
+    <div class="col-2 py-3 px-lg-5">  <h1>Who</h1> </div>
+    <div class="col py-3 px-lg-5"> <p><%= @activity.who_description %></p> </div>
+  </div>
+</div>
+<div class="container-fluid px-lg-5">
+
+  <div class="row mx-lg-n5 align-items-center">
+    <div class="col-2 py-3 px-lg-5">  <h1>Why</h1> </div>
+    <div class="col py-3 px-lg-5">  <p><%= @activity.why_description %></p></div>
+  </div>
+
+</div>
+
+<div class="container-fluid px-lg-5">
+
+  <div class="row mx-lg-n5 align-items-center">
+    <div class="col-2 py-3 px-lg-5">  <h1>What</h1> </div>
+    <div class="col py-3 px-lg-5">   <p><%= @activity.what_description %></p> </div>
+  </div>
+  <div class="row mx-lg-n5 align-items-center">
+    <div class="col-2 py-3 px-lg-5">  <h1>When</h1> </div>
+    <div class="col py-3 px-lg-5">
+      <p>From: <%= @activity.start_date %></p>
+      <p>To: <%= @activity.end_date %></p>
+    </div>
+  </div>
+<div class="row mx-lg-n5 align-items-center">
+ <div class="col-2 py-3 px-lg-5">  <h1>Where</h1> </div>
+  <div class="col py-3 px-lg-5">  <p>Meeting point: <%= @activity.meeting_address %></p>
+   <o>Activity: <%= @activity.activity_address %></p> </div>
+</div>
+<div>
+  <p>Requirements for this activity: <%= @activity.requirements %></p>
+</div>
+  <h1>Donation: <%= @activity.donation %></h1>
+</div>
+
+
+
+
+

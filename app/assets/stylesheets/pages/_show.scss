@@ -1,0 +1,30 @@
+body {
+  background-color: white;
+  font-color: $light-gray;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-fluid  {
+border: 1px solid;                        /* Small radius */
+
+}
+#map {
+
+  margin-bottom: 60px;
+}
+
+.user-info {
+  text-align: center;
+  font-family: $body-font;
+}
+
+.user-description {
+  text-align: left;
+}
+
+
+
