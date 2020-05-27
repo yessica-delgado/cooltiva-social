@@ -11,9 +11,8 @@
     </ol>
     <div class="carousel-inner" id="carousel" style="height: 500px">
       <div class="carousel-item active">
-
-
       </div>
+    </div>
       <% @activity.photos.each do |photo| %>
         <div class="carousel-item">
           <%= cl_image_tag(photo.key)%>
@@ -26,7 +25,7 @@
         </div> -->
         </div>
       <% end %>
-    </div>
+    <!-- </div> -->
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -35,7 +34,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-<
+</div>
 
 <div class= "container">
      <div id="map"
@@ -90,7 +89,18 @@
 <div>
   <p>Requirements for this activity: <%= @activity.requirements %></p>
 </div>
-  <h1>Donation: <%= @activity.donation %></h1>
+
+<div class="col-4">
+  <div class="venue-show-card">
+    <h5>Book</h5>
+    <div class= "input-group" >
+    <%= simple_form_for([@activity, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Book ",
+     class: "btn btn-warning mt-2" %>  <% end %>
+     </div>
+  </div>
 </div>
 
 

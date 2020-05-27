@@ -1,0 +1,27 @@
+
+<h3>Upcoming bookings</h3>
+
+<% @bookings.each do |booking| %>
+<% if Date.now < booking.activity.start_date %>
+  <%= booking.activity.title %>
+  <%= booking.activity.description %>
+  <%= booking.activity.start_date %>
+  <%= booking.activity.end_date %>
+  <%= link_to "Cancel booking",
+            activity_path(activity),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+<% end %>
+
+<h3>Past bookings</h3>
+
+<% @bookings.each do |booking| %>
+<% if Date.now > booking.activity.start_date %>
+  <%= booking.activity.title %>
+  <%= booking.activity.description %>
+  <%= booking.activity.start_date %>
+  <%= booking.activity.end_date %>
+
+<% end %>
+<% end %>

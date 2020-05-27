@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
 
-  def new
-    @activity = Activity.find(params[:activity_id])
-    @user = current_user
-    @booking = Booking.new
-  end
+
 
   def create
     @booking = Booking.new(booking_params)
@@ -14,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     if @booking.save
       render 'shared/booking_confirmation'
+      @activity.capacity -= 1
     else
       render 'activities/show'
     end
@@ -23,11 +20,17 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
-  def show
-    @booking = Booking.find(params[:booking_params])
+  def destroy
+    @booking = Booking.find(booking_params)
+    @booking.destroy
+    @activity = Activity.find(params[:activity_id])
+    @activity.capacity += 1
+    redirect_to activities_path
+
   end
 
 private
+
  def booking_params
    params.require(:booking).permit(:date)
  end
