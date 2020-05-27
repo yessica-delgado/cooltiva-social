@@ -1,11 +1,14 @@
 .containernav {
   position: absolute;
   width: 100%;
+
 }
 
 .navbar-lewagon {
   justify-content: space-between;
   z-index: 100;
+  background-color: #2C2C2C;
+
 }
 
 .navbar-lewagon .navbar-collapse {
