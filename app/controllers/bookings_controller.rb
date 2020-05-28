@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.activity = @activity
     @booking.user = @user
+    authorize @booking
     if @booking.save
       render 'shared/booking_confirmation'
       @activity.capacity -= 1
