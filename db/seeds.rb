@@ -17,7 +17,7 @@ donation = Category.create(name: "Donations")
 sk = Category.create(name: "Shared Knowledge")
 sw = Category.create(name: "Social Working")
 
-user_1 = User.create!(nickname: "Yessica", email: "yessica@gmail.com", password: "123456789")
+user_1 = User.create!(nickname: "Yessica", email: "yessica@gmail.com", password: "123456789", persona_description: "Yessica is the CEO of Cooltiva México, she has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
 activity_1 = Activity.create!(
   title: "Cooltiva",
   category: rc,
@@ -40,7 +40,7 @@ activity_1.photos.attach(io: file_two, filename: 'cooltiva2.png', content_type: 
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590540646/Captura_de_Pantalla_2020-05-26_a_la_s_19.50.35_prwyqq.png' )
 activity_1.photos.attach(io: file_three, filename: 'cooltiva3.png', content_type: 'image/png')
 
-user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789")
+user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Rodolfo is head director of Techo México, she has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
 activity_2 = Activity.create!(
   title: "Techo",
   category: sw,
@@ -63,7 +63,7 @@ activity_2.photos.attach(io: file_two, filename: 'techo2.png', content_type: 'im
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.17_sqtidd.png')
 activity_2.photos.attach(io: file_three, filename: 'techo3.png', content_type: 'image/png')
 
-user_3 = User.create!(nickname: "Lilia", email:"lilia@gmail.com", password:"123456789")
+user_3 = User.create!(nickname: "Lilia", email:"lilia@gmail.com", password:"123456789", persona_description: "Lilia is the founder of lutheransunset, she has been working to fight poverty and hunger for the last 3 years and now coordinates all activities along the country to change society for the better.")
 activity_3 = Activity.create!(
   title: "Teach our senior residents how to sing!",
   category: sk,
@@ -85,7 +85,7 @@ activity_3.photos.attach(io: file_one, filename: 'senior1.png', content_type: 'i
 file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590545181/_112000835_outsidecarehome_w2xxis.jpg' )
 activity_3.photos.attach(io: file_two, filename: 'senior2.png', content_type: 'image/png')
 
-user_4 = User.create!(nickname: "Karla", email:"karla@gmail.com", password:"123456789")
+user_4 = User.create!(nickname: "Karla", email:"karla@gmail.com", password:"123456789", persona_description: "Karla is the founder of la mano del mono, she has been working to fight poverty and hunger for the last 3 years and now coordinates all activities along the country to change society for the better.")
 activity_4 = Activity.create!(
   title: "Chiapas is in need of resources to protect their jungle!",
   category: donation,
