@@ -57,8 +57,6 @@ activity_2 = Activity.create!(
   start_date: "20/06/2020",
   end_date: "20/07/2020",
   requirements: "Sunscreen, hammer, positive attitude, sleeping bag, full body pijama, 2 days change of clothing, gloves, no luxury tiems.")
-file_one= URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541423/Captura_de_Pantalla_2020-05-26_a_la_s_20.02.48_eeviv6.png')
-activity_2.photos.attach(io: file_one, filename: 'techo1.png', content_type: 'image/png')
 file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.01_l7j7dt.png')
 activity_2.photos.attach(io: file_two, filename: 'techo2.png', content_type: 'image/png')
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.17_sqtidd.png')
