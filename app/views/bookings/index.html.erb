@@ -8,7 +8,7 @@
   <%= booking.activity.start_date %>
   <%= booking.activity.end_date %>
   <%= link_to "Cancel booking",
-            bookings_path(booking),
+            booking_path(booking),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
 <% end %>

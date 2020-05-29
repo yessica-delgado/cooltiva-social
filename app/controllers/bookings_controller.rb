@@ -18,21 +18,22 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @bookings= policy_scope(Booking)
     @bookings = current_user.bookings
   end
 
   def destroy
-    @booking = Booking.find(booking_params)
+    @booking = Booking.find(params[:id])
+    @activity = @booking.activity
+    authorize @booking
     @booking.destroy
-    @activity = Activity.find(params[:activity_id])
     @activity.capacity += 1
-    redirect_to activities_path
-
+    redirect_to activity_path(@activity)
   end
 
 private
 
  def booking_params
-   params.require(:booking).permit(:date)
+  params.require(:booking).permit(  :start_date, :end_date)
  end
 end

@@ -9,6 +9,7 @@ puts "Cleaning database..."
 Activity.destroy_all
 User.destroy_all
 Category.destroy_all
+Booking.destroy_all
 puts 'database is clean'
 
 #Crear las 4 categorias
