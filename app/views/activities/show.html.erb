@@ -11,14 +11,16 @@
     </ol>
     <div class="carousel-inner" id="carousel" style="height: 500px; width: 100%">
       <div class="carousel-item active">
-         <%= cl_image_tag(@activity.photos[0].key)%>
+       <%= cl_image_tag(@activity.photos[0].key)%>
+
       </div>
+    </div>
       <% @activity.photos.each do |photo| %>
         <div class="carousel-item">
           <%= cl_image_tag(photo.key)%>
         </div>
       <% end %>
-    </div>
+    <!-- </div> -->
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -27,7 +29,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-<
+</div>
 
 <div class= "container mt-5">
      <div class="mb-0" id="map"
@@ -88,6 +90,18 @@
   <h3>Requirements for this activity:</h3> <p> <%= @activity.requirements %></p>
   </div>
 </div>
+
+<div class="col-4">
+  <div class="venue-show-card">
+    <h5>Book</h5>
+    <div class= "input-group" >
+    <%= simple_form_for([@activity, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Book ",
+     class: "btn btn-warning mt-2" %>  <% end %>
+     </div>
+  </div>
 </div>
 
 
