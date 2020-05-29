@@ -13,3 +13,13 @@
 @import "pages/index";
 @import "pages/show";
 @import 'mapbox-gl/dist/mapbox-gl';
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bodyflex {
+  flex-grow: 1;
+}
