@@ -1,0 +1,36 @@
+.form-session-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 10;
+  align-items: center;
+}
+
+.form-session {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-actions {
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.form-create-activity {
+  display: flex;
+  margin-top: 100px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#new_activity {
+  width: 600px;
+
+
+}
