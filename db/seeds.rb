@@ -24,7 +24,7 @@ activity_1 = Activity.create!(
   category: rc,
   user: user_1,
   website: "https:/cooltiva.mx",
-  who_description: "Cooltiva let’s you know local producer who delivers fresh ins season products under sustainables practices, with differents ways of delivery. Access high quality products directly delivered at your door, all things you need to improve your diet in one place.",
+  who_description: "Cooltiva lets you know local producer who delivers fresh ins season products under sustainables practices, with differents ways of delivery. Access high quality products directly delivered at your door, all things you need to improve your diet in one place.",
   why_description: "80 percent of global food is produced for small farmers that are not getting a fair price for the products they sell, you can make the difference",
   what_description: "buy direct from local farmers in cooltiva, there are more than 200 hundrend products from food to cleaning products, toys, gifts, etc. All you need to have a sustainable life.",
   meeting_address: "martires de la conquista 113",
@@ -109,3 +109,14 @@ activity_4.photos.attach(io: file_three, filename: 'mono3.png', content_type: 'i
 
 
 p "Created #{Activity.count} activities"
+
+Activity.each  do |activity|
+  5.times do |review|
+      review = Review.create!(
+        activity: :activity,
+        description: Faker::Quote.famous_last_words,
+        rating: rand(1..5) )
+    end
+end
+
+end
