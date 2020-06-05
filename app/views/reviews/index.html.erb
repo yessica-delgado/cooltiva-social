@@ -1,0 +1,19 @@
+
+<div class="list-group">
+  <% @reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+        <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+               <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+      </small>
+        <p><%= review.description %></p>
+    </li>
+  <% end %>
+</div>

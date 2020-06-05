@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
-   def create
+  def create
     @review = Review.new(review_params)
     @activity = Activity.find(params[:activity_id])
     @review.activity = @activity
@@ -15,6 +15,11 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    all_reviews = policy_scope(Review)
+    @reviews = all_reviews.where(activity_id: params[:activity_id])
   end
 
   private

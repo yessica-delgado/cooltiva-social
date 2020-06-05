@@ -5,13 +5,13 @@ class ActivitiesController < ApplicationController
   def index
     @activities = policy_scope(Activity)
     @activities = @activities.geocoded
-
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
       }
     end
+
   end
 
   def new
@@ -39,6 +39,7 @@ class ActivitiesController < ApplicationController
 
 
   def edit
+    authorize @activity
   end
 
   def update

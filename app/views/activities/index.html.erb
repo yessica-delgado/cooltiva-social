@@ -15,11 +15,11 @@
     <% @activities.each do |activity| %>
     <div class="card-container" <%= activity_path(activity) %>>
 
-        <div class="cards-image-container">
+        <div class="cards-image-container col-2">
           <%= cl_image_tag(activity.photos[0].key)%>
         </div>
 
-          <div class="card-text-container">
+          <div class="card-text-container col-8">
             <div class="cards-title-container">
               <h3> <%= link_to activity.title, activity_path(activity) %> </h3>
             </div>
@@ -31,11 +31,25 @@
             </div>
           </div>
 
-        <div class="cards-review-container">
+        <div class="cards-review-container col-2">
+        <% activity.reviews.each do |review| %>
+          <small>
+          <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+          </small>
+          <p><%= review.description %></p>
+        <% end %>
         </div>
-
     </div>
-  </div>
     <% end %>
+  </div>
 
-</div>
+
+
