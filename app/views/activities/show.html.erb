@@ -36,6 +36,20 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     <div class="col-md-6 mt-2" id= "user-info">
+    <% @reviews.each do |review| %>
+        <small>
+          <% count = 0 %>
+            <% 5.times do %>
+              <% if review.rating > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+          <% count += 1 %>
+          <% end %>
+        </small>
+      <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
+    <% end %>
       <h2>This activity was created by <%= @user.nickname %></h2>
       <p>Click on the avatar to chat with him</p>
       <div class= "user-description">
@@ -100,27 +114,6 @@
     </div>
   </div>
 </div>
-
-
-
- <div class="list-group">
-        <% @reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <p><%= review.description %></p>
-          </li>
-        <% end %>
-      </div>
 
 
 

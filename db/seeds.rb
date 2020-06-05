@@ -28,7 +28,7 @@ activity_1 = Activity.create!(
   why_description: "80 percent of global food is produced for small farmers that are not getting a fair price for the products they sell, you can make the difference",
   what_description: "buy direct from local farmers in cooltiva, there are more than 200 hundrend products from food to cleaning products, toys, gifts, etc. All you need to have a sustainable life.",
   meeting_address: "martires de la conquista 113",
-  activity_address: "at your house",
+  activity_address: "martires de la conquista 113",
   capacity: 20,
   donation: 300,
   start_date: "20/06/2020",
