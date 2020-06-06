@@ -68,3 +68,15 @@ img {
   width: 200px;
   border-left: 1px solid gray;
 }
+
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pag-items {
+  margin-right: 5px;
+  margin-left: 5px;
+}
