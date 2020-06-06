@@ -61,6 +61,7 @@
       <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
     <% end %>
       <h2>This activity was created by <%= @user.nickname %></h2>
+      <%= cl_image_tag(@activity.user.photo.key) if @activity.user.photo.attached? %>
       <p>Click on the avatar to chat with him</p>
       <div class= "user-description">
         <p> <%= @activity.user.persona_description %> </p>
