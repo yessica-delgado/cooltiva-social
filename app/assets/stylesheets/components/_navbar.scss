@@ -30,7 +30,7 @@
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
     color: white;
-    padding-right: 50px;
+    padding-right: none;
 }
 .navbar-lewagon .navbar-brand img {
   width: 60px;
@@ -88,11 +88,11 @@ color: white;
 font-family: "Work Sans", "Helvetica", "sans-serif";
 font-weight: 500;
 list-style: none;
-box-sizing: border-box;
+
 display: inline-block;
-padding-top: none;
-padding-bottom: none;
-margin-right: 1rem;
+padding: none;
+margin-right: 2rem;
+margin-left: 2rem;
 margin-top: none;
 border-top: none;
 font-size: 1.25rem;
