@@ -19,8 +19,10 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    all_reviews = policy_scope(Review)
-    @reviews = all_reviews.where(activity_id: params[:activity_id])
+    #all_reviews = policy_scope(Review)
+    #@reviews = all_reviews.where(activity_id: params[:activity_id])
+    @activity = Activity.find(params[:activity_id])
+    @reviews = policy_scope(Review).where(activity: @activity)
   end
 
   private
