@@ -46,7 +46,7 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     <div class="col-md-6 mt-2" id= "user-info">
-
+      <% if @activity.reviews.any? %>
         <small>
           <% count = 0 %>
             <% 5.times do %>
@@ -57,9 +57,14 @@
               <% end %>
           <% count += 1 %>
           <% end %>
+          <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
         </small>
+      <% else %>
+        <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i>
+        <p> This activity has no reviews</p>
+     <% end %>
 
-    <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
+
       <h2>This activity was created by <%= @user.nickname %></h2>
       <%= cl_image_tag(@activity.user.photo.key) if @activity.user.photo.attached? %>
       <p>Click on the avatar to chat with him</p>
