@@ -37,7 +37,7 @@
           <small>
           <% count = 0 %>
           <% 5.times do %>
-            <% if review.rating.sample > count %>
+            <% if review.rating > count %>
               <i class="fas fa-star"></i>
             <% else %>
               <i class="far fa-star"></i>
@@ -45,8 +45,8 @@
             <% count += 1 %>
           <% end %>
           </small>
-          <p><%= review.description.sample %></p>
-          <p><%= review.user.nickname.sample %></p>
+          <p><%= review.description %></p>
+          <p><%= review.user.nickname %></p>
         <% end %>
         </div>
     </div>
