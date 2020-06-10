@@ -31,6 +31,46 @@
 
 #new_activity {
   width: 600px;
+}
 
+.edit-profile-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:  100%;
+  padding-bottom: 200px;
+}
 
+.edit-profile {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+}
+
+.btn-success {
+  height: 50px;
+}
+
+#edit_user > div.btn-container > button > input {
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+body > div.edit-profile-container > div > button > a {
+  color: white;
+}
+
+#btn-goback {
+  margin-bottom: 20px;
 }

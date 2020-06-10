@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :photo, :persona_description])
   end
 
   private

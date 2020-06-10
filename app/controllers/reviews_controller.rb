@@ -5,16 +5,24 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
-   def create
+  def create
     @review = Review.new(review_params)
     @activity = Activity.find(params[:activity_id])
     @review.activity = @activity
+    @review.user = current_user
     authorize @review
     if @review.save
       redirect_to activity_path(@activity)
     else
       render :new
     end
+  end
+
+  def index
+    #all_reviews = policy_scope(Review)
+    #@reviews = all_reviews.where(activity_id: params[:activity_id])
+    @activity = Activity.find(params[:activity_id])
+    @reviews = policy_scope(Review).where(activity: @activity)
   end
 
   private

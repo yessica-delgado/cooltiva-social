@@ -1,0 +1,47 @@
+
+<div>
+  <h1>Rating of: <%= @activity.title %></h1>
+</div>
+<div class="">
+<% if @activity.reviews.any? %>
+        <small>
+          <% count = 0 %>
+            <% 5.times do %>
+              <% if (@activity.reviews.pluck(:rating).inject(:+)/(@activity.reviews.count).to_f).ceil > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+          <% count += 1 %>
+          <% end %>
+          <h4> Average Rating</h4>
+        </small>
+      <% else %>
+        <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i>
+        <p> This activity has no reviews</p>
+     <% end %>
+</div>
+<div class="list-group">
+  <% @reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+        <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+               <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+      </small>
+        <p><%= review.description %></p>
+        <p><%= review.user.nickname %></p>
+    </li>
+  <% end %>
+</div>
+
+  <div class="btn btn-primary"> <%= link_to "Add Review", new_activity_review_path(@activity), :class => "btn" %> </div>
+
+
+

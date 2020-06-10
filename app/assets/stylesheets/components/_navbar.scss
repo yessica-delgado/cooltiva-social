@@ -18,14 +18,19 @@
 .navbar-lewagon .navbar-collapse {
   justify-content: center;
 
+
 }
 #navbarSupportedContent > ul > div {
   color: white;
 }
 
+#navbarDropdown {
+  color: white;
+}
+
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
     color: white;
-    padding-right: 50px;
+    padding-right: none;
 }
 .navbar-lewagon .navbar-brand img {
   width: 60px;
@@ -48,19 +53,23 @@ line-height: 40px;
 color: white;
 }
 
-#navbarSupportedContent > ul > div > li:nth-child(2) {
+#navbarSupportedContent > ul > div > li:nth-child(3) > a {
 text-align: center;
 vertical-align: middle;
 line-height: 40px;
+margin-top: 2px;
+color: white;
 }
 
 #navbarSupportedContent > ul > div > li:nth-child(4) {
+  text-align: center;
 text-align: center;
 vertical-align: middle;
 line-height: 40px;
 }
 
 #navbarSupportedContent > ul > div > li:nth-child(5) {
+  text-align: center;
 text-align: center;
 vertical-align: middle;
 line-height: 40px;
@@ -79,11 +88,11 @@ color: white;
 font-family: "Work Sans", "Helvetica", "sans-serif";
 font-weight: 500;
 list-style: none;
-box-sizing: border-box;
+
 display: inline-block;
-padding-top: none;
-padding-bottom: none;
-margin-right: 1rem;
+padding: none;
+margin-right: 2rem;
+margin-left: 2rem;
 margin-top: none;
 border-top: none;
 font-size: 1.25rem;

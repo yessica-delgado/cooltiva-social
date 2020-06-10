@@ -3,15 +3,14 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = policy_scope(Activity)
-    @activities = @activities.geocoded
-
-    @markers = @activities.map do |activity|
+    @activities = policy_scope(Activity).page params[:page]
+    @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
       }
     end
+
   end
 
   def new
@@ -39,6 +38,7 @@ class ActivitiesController < ApplicationController
 
 
   def edit
+    authorize @activity
   end
 
   def update

@@ -9,7 +9,7 @@ class ReviewPolicy < ApplicationPolicy
       true
     end
 
-    def show?
+    def index?
       true
     end
 
