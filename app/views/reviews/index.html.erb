@@ -1,25 +1,48 @@
 
-<div class="list-group">
-  <% @reviews.each do |review| %>
-    <li class="list-group-item">
-      <small>
-        <% count = 0 %>
-          <% 5.times do %>
-            <% if review.rating > count %>
-              <i class="fas fa-star"></i>
-            <% else %>
-               <i class="far fa-star"></i>
-            <% end %>
-            <% count += 1 %>
-          <% end %>
-      </small>
-        <p><%= review.description %></p>
-        <p><%= review.user.nickname %></p>
-    </li>
-  <% end %>
+
+<div class="reviews-index-container">
+  <div class="reviews-title-container">
+    <h1 class="text-center"> Star Rating of: <%= @activity.title %></h1>
+  </div>
+
+  <div class="review-list-container">
+    <% @reviews.each do |review| %>
+
+      <div class="review-card-container">
+        <div class="review-profile-pic-container">
+          <%= image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : ""%>
+        </div>
+          <div class="nickname-review-container">
+            <p><%= review.user.nickname %></p>
+            <p> # days ago </p>
+          </div>
+            <div class="text-and-stars-container">
+              <div class="stars-container">
+                <small>
+                <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                       <i class="far fa-star"></i>
+                    <% end %>
+                    <% count += 1 %>
+                  <% end %>
+                </small>
+              </div>
+              <div class="text-review-container">
+                <p>"<%= review.description %>"</p>
+              </div>
+            </div>
+      </div>
+
+    <% end %>
+  </div>
+
 </div>
 
-  <div class="btn btn-primary"> <%= link_to "Add Review", new_activity_review_path(@activity), :class => "btn" %> </div>
-
+  <div class="btn btn-primary" id="new-review-btn">
+    <%= link_to "Add Review", new_activity_review_path(@activity), :class => "btn" %>
+  </div>
 
 
