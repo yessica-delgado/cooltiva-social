@@ -32,11 +32,12 @@
           </div>
 
         <div class="cards-review-container col-2">
-        <% activity.reviews.each do |review| %>
+
+        <% if activity.reviews[0] %>
           <small>
           <% count = 0 %>
           <% 5.times do %>
-            <% if review.rating > count %>
+            <% if activity.reviews[0].rating > count %>
               <i class="fas fa-star"></i>
             <% else %>
               <i class="far fa-star"></i>
@@ -44,8 +45,8 @@
             <% count += 1 %>
           <% end %>
           </small>
-          <p><%= review.description %></p>
-          <p><%= review.user.nickname %></p>
+          <p><%= activity.reviews[0].description %></p>
+          <p><%= activity.reviews[0].user.nickname %></p>
         <% end %>
         </div>
     </div>
