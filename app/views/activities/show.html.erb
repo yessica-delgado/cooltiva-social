@@ -66,12 +66,18 @@
 
 
       <h2>This activity was created by <%= @user.nickname %></h2>
-      <%= cl_image_tag(@activity.user.photo.key) if @activity.user.photo.attached? %>
       <p>Click on the avatar to chat with him</p>
-      <div class= "user-description">
-        <p> <%= @activity.user.persona_description %> </p>
-        <p> Category: <%= link_to @activity.category.name, activity_path(@activity.category) %></p>
-        <p>Web site available: <%= link_to @activity.website, @activity.website %></p>
+      <div class="row">
+        <div class="col-9">
+          <div class= "user-description">
+            <p> <%= @activity.user.persona_description %> </p>
+            <p> Category: <%= link_to @activity.category.name, activity_path(@activity.category) %></p>
+            <p>Web site available: <%= link_to @activity.website, @activity.website %></p>
+          </div>
+        </div>
+        <div class="col-3 profile-picture">
+          <%= cl_image_tag(@activity.user.photo.key) if @activity.user.photo.attached? %>
+        </div>
       </div>
     </div>
 </div>
