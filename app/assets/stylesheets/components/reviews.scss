@@ -1,17 +1,52 @@
-.new-review-container {
-  position: absolute;
+.reviews-index-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height:  100%;
-  padding-bottom: 200px;
-
+  flex-direction: column;
+  margin-top: 120px;
 }
 
-.new-review {
-  width: 80%;
+.review-list-container {
   display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 20px;
+}
+
+.review-card-container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 20px;
+  height: 160px;
+}
+.review-profile-pic-container {
+  width: 160px;
+  height: 160px;
+}
+
+.nickname-review-container {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
+}
+
+.text-and-stars-container {
+  width: inherit;
+  height: 160px;
+  padding: 10px;
+}
+
+.text-review-container {
+  padding: 10px;
+}
+
+#new-review-btn {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45%;
 }
