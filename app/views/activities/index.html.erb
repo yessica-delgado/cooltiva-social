@@ -38,15 +38,15 @@
           <% count = 0 %>
           <% 5.times do %>
             <% if activity.reviews[0].rating > count %>
-              <i class="fas fa-star"></i>
+              <i class="fas fa-star mt-3"></i>
             <% else %>
-              <i class="far fa-star"></i>
+              <i class="far fa-star mt-3"></i>
             <% end %>
             <% count += 1 %>
           <% end %>
           </small>
-          <p><%= activity.reviews[0].description %></p>
-          <p><%= activity.reviews[0].user.nickname %></p>
+          <p class="mt-3"><%=h truncate(activity.reviews[0].description, :length => 100) %></p>
+          <p class="text-right"><%= activity.reviews[0].user.nickname %></p>
         <% end %>
         </div>
     </div>
