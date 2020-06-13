@@ -8,7 +8,7 @@
 
       <div class="review-card-container">
         <div class="review-profile-pic-container">
-          <%= image_tag current_user.photo.attached? ? cl_image_path(current_user.photo.key) : ""%>
+          <%= cl_image_tag(review.user.photo.key) if review.user.photo.attached? %>
         </div>
           <div class="nickname-review-container">
             <p><%= review.user.nickname %></p>
