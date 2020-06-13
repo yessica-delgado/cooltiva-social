@@ -106,7 +106,7 @@
   </div>
   <div class="row mx-lg-n5 align-items-center">
     <div class="col-2 py-3 px-lg-5">  <h1>When</h1> </div>
-    <div class="col py-3 px-lg-5">
+    <div class="col-7 py-3 px-lg-5">
       <p>From: <%= @activity.start_date %></p>
       <p>To: <%= @activity.end_date %></p>
     </div>
@@ -127,11 +127,11 @@
     <div class="col-2 py-3 px-lg-5">  <h1>Book</h1> </div>
     <div class="col py-3 px-lg-5">
       <div class= "input-group" >
-    <%= simple_form_for([@activity, @booking]) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit "Book ",
-     class: "btn btn-warning mt-2 btn-block" %>  <% end %>
+        <%= simple_form_for([@activity, @booking]) do |f| %>
+        <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+        <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+        <%= f.button :submit, "Book", class: "btn btn-primary btn-block", style: "margin-bottom: 20px;" %>
+        <% end %>
      </div>
     </div>
   </div>
