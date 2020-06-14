@@ -7,16 +7,15 @@
     <% @reviews.each do |review| %>
 
       <div class="review-card-container">
-        <div class="review-profile-pic-container">
+        <div class="review-profile-pic-container mr-4">
           <%= cl_image_tag(review.user.photo.key) if review.user.photo.attached? %>
         </div>
-          <div class="nickname-review-container">
-            <p><%= review.user.nickname %></p>
+          <div class="nickname-review-container text-center mt-4">
             <p> # days ago </p>
+            <h3><%= review.user.nickname %></h3>
           </div>
             <div class="text-and-stars-container">
               <div class="stars-container">
-                <small>
                 <% count = 0 %>
                   <% 5.times do %>
                     <% if review.rating > count %>
@@ -26,9 +25,8 @@
                     <% end %>
                     <% count += 1 %>
                   <% end %>
-                </small>
               </div>
-              <div class="text-review-container">
+              <div class="text-review-container mt-4">
                 <p>"<%= review.description %>"</p>
               </div>
             </div>
@@ -40,5 +38,5 @@
 </div>
 
   <div class="btn btn-primary" id="new-review-btn">
-    <%= link_to "Add Review", new_activity_review_path(@activity), :class => "btn" %>
+    <%= link_to "Add Review", new_activity_review_path(@activity), :class => "btn text-white" %>
   </div>

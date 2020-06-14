@@ -14,8 +14,8 @@
           <h5 class="">  <%= booking.activity.title %> </h5>
           <p class="card-text"> <%= booking.activity.description %> </p>
           <p class="card-text"><small class="text-muted">
-            <%= booking.activity.start_date %>
-            <%= booking.activity.end_date %></small></p>
+            <%= booking.start_date %> |
+            <%= booking.end_date %></small></p>
         </div>
         <div> <%= link_to "Cancel booking",
             booking_path(booking),
@@ -43,8 +43,8 @@
           <h5 class="">  <%= booking.activity.title %> </h5>
           <p class="card-text"> <%= booking.activity.description %> </p>
           <p class="card-text"><small class="text-muted">
-            <%= booking.activity.start_date %>
-            <%= booking.activity.end_date %></small></p>
+            <%= booking.start_date %> |
+            <%= booking.end_date %></small></p>
         </div>
         <div> <%= link_to "Cancel booking",
             booking_path(booking),
