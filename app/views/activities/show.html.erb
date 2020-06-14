@@ -2,14 +2,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
-<div class="container mt-5" id="title">
-  <div class="row mt-5 justify-content-center">
-    <div class="col-12 mt-5 justify-content-center">
-    <h1 class="text-center"><%= @activity.title %></h1>
-   </div>
-  </div>
+<div class="show-page-title-container">
+    <h1><%= @activity.title %></h1>
 </div>
-<div class= "container mt-5">
+
+<div class= "container mt-4">
   <div class="row">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -39,9 +36,9 @@
   </div>
 </div>
 
-<div class= "container mt-5">
-     <div class="mb-0" id="map"
-        style="width: 30%; height: 300px;"
+<div class= "container mt-4">
+     <div class="ml-3 mt-2 mb-0" id="map"
+        style="width: 45%; height: 330px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -60,10 +57,11 @@
           <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
         </small>
       <% else %>
+      <div class="stars-and-review-text-container justify-content-around">
         <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i>
-        <p> This activity has no reviews</p>
+        <p> This activity has no reviews <%= link_to "(Add one)", activity_reviews_path(@activity) %></p>
      <% end %>
-
+      </div>
 
       <h2>This activity was created by <%= @user.nickname %></h2>
       <p>Click on the avatar to chat with him</p>
@@ -75,67 +73,57 @@
             <p>Web site available: <%= link_to @activity.website, @activity.website %></p>
           </div>
         </div>
-        <div class="col-3 profile-picture">
+        <div class="profile-picture col-3 ">
           <%= cl_image_tag(@activity.user.photo.key) if @activity.user.photo.attached? %>
         </div>
       </div>
     </div>
 </div>
 
-<div class= "m-5 p-5">
-<div class="container-fluid px-lg-5">
-  <div class="row mx-lg-n5 align-items-center" >
-    <div class="col-2 py-3 px-lg-5">  <h1>Who</h1> </div>
-    <div class="col py-3 px-lg-5"> <p><%= @activity.who_description %></p> </div>
-  </div>
-</div>
-<div class="container-fluid px-lg-5">
-
-  <div class="row mx-lg-n5 align-items-center">
-    <div class="col-2 py-3 px-lg-5">  <h1>Why</h1> </div>
-    <div class="col py-3 px-lg-5">  <p><%= @activity.why_description %></p></div>
+<div class="show-text-container">
+  <div class="first-texts-container">
+     <h1 id="show-titles">Who</h1>
+     <p id="show-texts"><%= @activity.who_description %></p>
+   </div>
+   <div class="second-texts-container">
+     <h1 id="show-titles">Why</h1>
+     <p id="show-texts"><%= @activity.why_description %></p>
   </div>
 
-</div>
-
-<div class="container-fluid px-lg-5">
-
-  <div class="row mx-lg-n5 align-items-center">
-    <div class="col-2 py-3 px-lg-5">  <h1>What</h1> </div>
-    <div class="col py-3 px-lg-5">   <p><%= @activity.what_description %></p> </div>
-  </div>
-  <div class="row mx-lg-n5 align-items-center">
-    <div class="col-2 py-3 px-lg-5">  <h1>When</h1> </div>
-    <div class="col py-3 px-lg-5">
-      <p>From: <%= @activity.start_date %></p>
-      <p>To: <%= @activity.end_date %></p>
+  <div class="third-texts-and-booking-container">
+    <div class="third-texts-container">
+      <div class="what-container">
+        <h1 id="show-titles">What</h1>
+        <p id="show-texts"><%= @activity.what_description %></p>
+      </div>
+      <div class="when-container">
+        <h1 id="show-titles">When</h1>
+        <p id="show-texts">From: <%= @activity.start_date %></p>
+        <p id="show-texts">To: <%= @activity.end_date %></p>
+      </div>
+      <div class="where-container">
+        <h1 id="show-titles">Where</h1>
+        <p id="show-texts">Meeting point: <%= link_to @activity.meeting_address %></p>
+        <p id="show-texts">Activity: <%= link_to @activity.activity_address %></p>
+      </div>
+      <div class="donations-container">
+        <h1 id="show-titles">Donation</h1>
+        <p id="show-texts">$<%= @activity.donation %>.00</p>
+      </div>
+      <div class="reqs-container">
+        <h4 id="show-titles">Requirements for this activity:</h4>
+        <p id="show-texts"> <%= @activity.requirements %></p>
+      </div>
     </div>
-  </div>
-<div class="row mx-lg-n5 align-items-center">
- <div class="col-2 py-3 px-lg-5">  <h1>Where</h1> </div>
-  <div class="col py-3 px-lg-5">  <p>Meeting point: <%= link_to @activity.meeting_address %></p>
-   <o>Activity: <%= link_to @activity.activity_address %></p> </div>
-</div>
-  <div class="row mx-lg-n5 align-items-center">
-    <div class="col-2 py-3 px-lg-5">  <h1>Donation:</h1> </div>
-    <div class="col py-3 px-lg-5">   <p>$<%= @activity.donation %>.00</p> </div>
-  </div>
-  <div>
-  <h3>Requirements for this activity:</h3> <p> <%= @activity.requirements %></p>
-  </div>
-  <div class="row mx-lg-n5 align-items-center">
-    <div class="col-2 py-3 px-lg-5">  <h1>Book</h1> </div>
-    <div class="col py-3 px-lg-5">
-      <div class= "input-group" >
-    <%= simple_form_for([@activity, @booking]) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit "Book ",
-     class: "btn btn-warning mt-2 btn-block" %>  <% end %>
-     </div>
+    <div class="bookings-container">
+      <h1>Book</h1>
+      <%= simple_form_for([@activity, @booking]) do |f| %>
+        <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+        <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+        <%= f.button :submit, "Book", class: "btn btn-primary btn-block", style: "margin-bottom: 20px;" %>
+        <% end %>
     </div>
   </div>
 </div>
-
 
 

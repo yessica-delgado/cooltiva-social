@@ -3,18 +3,32 @@ body {
   font-color: $light-gray;
 }
 
+.show-page-title-container {
+  margin-top: 120px;
+  text-align: center;
+}
 .container {
   display: flex;
   justify-content: space-between;
 }
 
 .container-fluid  {
-border: 1px solid;                        /* Small radius */
+border: 1px solid;                      /* Small radius */
 
 }
 #map {
 
   margin-bottom: 60px;
+}
+
+.stars-and-review-text-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#user-info > div > div.profile-picture.col-3 > img {
+  border-radius: 45%;
 }
 
 .user-info {
@@ -25,6 +39,73 @@ border: 1px solid;                        /* Small radius */
 .user-description {
   text-align: left;
 }
+.show-text-container {
+  margin-top: 20px;
+  display: inline-block;
+}
 
+#show-texts {
+  margin: 20px;
+}
 
+#show-titles {
+  margin: 20px;
+}
+.first-texts-container {
+  display: flex;
+  align-items: row;
+  width: 85%;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #767676;
+  margin-left: 8%;
+}
 
+.second-texts-container{
+  display: flex;
+  align-items: row;
+  width: 85%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #767676;
+  border-radius: 4px;
+  margin-left: 8%;
+}
+
+.third-texts-and-booking-container {
+  display: flex;
+  align-items: row;
+  width: 85%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #767676;
+  border-radius: 4px;
+  margin-left: 8%;
+}
+
+.bookings-container {
+  width: 50%;
+  text-align: center;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.bookings-title {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  color: white;
+}
+.what-container, .when-container, .where-container, .donations-container, .reqs-container {
+  display: flex;
+  align-items: row;
+}
+
+h1 {
+  color: gray;
+}
+
+p {
+  color: gray;
+}
