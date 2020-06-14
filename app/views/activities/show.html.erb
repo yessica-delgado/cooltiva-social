@@ -44,7 +44,6 @@
       </div>
     <div class="col-md-6 mt-2" id= "user-info">
       <% if @activity.reviews.any? %>
-        <small>
           <% count = 0 %>
             <% 5.times do %>
               <% if (@activity.reviews.pluck(:rating).inject(:+)/(@activity.reviews.count).to_f).ceil > count %>
@@ -55,7 +54,6 @@
           <% count += 1 %>
           <% end %>
           <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
-        </small>
       <% else %>
       <div class="stars-and-review-text-container justify-content-around">
         <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i>
