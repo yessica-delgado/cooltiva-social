@@ -18,6 +18,26 @@ donation = Category.create(name: "Donations")
 sk = Category.create(name: "Shared Knowledge")
 sw = Category.create(name: "Social Working")
 
+user1 = User.create!(nickname: "Linda", email: "linda@gmail.com", password: "123456789")
+profile_pic1 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235718/01-shutterstock_476340928-Irina-Bg_kno4ib.jpg' )
+user1.photo.attach(io: profile_pic1, filename: 'pp1.png', content_type: 'image/png')
+
+user2 = User.create!(nickname: "John", email: "john@gmail.com", password: "123456789")
+profile_pic2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235723/free-profile-photo-whatsapp-4_hw6fgm.png' )
+user2.photo.attach(io: profile_pic2, filename: 'pp1.png', content_type: 'image/png')
+
+user3 = User.create!(nickname: "Alice", email: "alice@gmail.com", password: "123456789")
+profile_pic3 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235860/960x0_zz0esc.jpg' )
+user3.photo.attach(io: profile_pic3, filename: 'pp1.png', content_type: 'image/png')
+
+user4 = User.create!(nickname: "Frank", email: "frank@gmail.com", password: "123456789")
+profile_pic4 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235777/Hairstyles-for-men-modern-quiff_jopu46.jpg' )
+user4.photo.attach(io: profile_pic4, filename: 'pp1.png', content_type: 'image/png')
+
+user5 = User.create!(nickname: "Raj", email: "raj@gmail.com", password: "123456789")
+profile_pic5 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235744/avSvBkZJ_400x400_ormr42.jpg' )
+user5.photo.attach(io: profile_pic5, filename: 'pp1.png', content_type: 'image/png')
+
 user_1 = User.create!(nickname: "Yessica", email: "yessica@gmail.com", password: "123456789", persona_description: "Yessica is the CEO of Cooltiva México, she has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
 profile_picture1 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592066007/T02NE0241-US8BY0S1F-6cb0fb5d07d7-512_bbhfox.jpg' )
 user_1.photo.attach(io: profile_picture1, filename: 'pp1.png', content_type: 'image/png')
@@ -70,6 +90,21 @@ review_1 = Review.create!(
   user: user_2,
   description: "The produce and other groceries are fresh and delicious, and the service is super. Cooltiva connects you directly with local, sustainable growers and ranchers. I love their bicycle delivery! Also, it's more convenient than shopping at a farmers' market.",
   rating: 5)
+review_2 = Review.create!(
+  activity: activity_2,
+  user: user2,
+  description: "I’m not going to lie, I had to sleep in the floor at a school and it was terrible for my back after a long day of work",
+  rating: 2)
+review_3 = Review.create!(
+  activity: activity_2,
+  user: user1,
+  description: "I think is a great exercise to re evaluate things worth in life, the families we built for incredibly nice",
+  rating: 5)
+review_4 = Review.create!(
+  activity: activity_2,
+  user: user5,
+  description: "I’d never had an experience like that, lots of hard work for someone who needs it and being able to know them as a person, it was nice",
+  rating: 4)
 
 user_3 = User.create!(nickname: "Lilia", email:"lilia@gmail.com", password:"123456789", persona_description: "Lilia is the founder of lutheransunset, she has been working to fight poverty and hunger for the last 3 years and now coordinates all activities along the country to change society for the better.")
 profile_picture3 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1591923776/1bhaj06fiwdp4i1z1lhsmfc8wzq7.png' )
@@ -124,13 +159,8 @@ activity_4.photos.attach(io: file_two, filename: 'mono2.png', content_type: 'ima
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590544435/AVZ_022818_Triunfo_9386-1024x683_kkpuva.jpg' )
 activity_4.photos.attach(io: file_three, filename: 'mono3.png', content_type: 'image/png')
 review_1 = Review.create!(
-  activity: activity_3,
-  user: user_4,
-  description: "I think is a great exercise to re evaluate things worth in life.",
-  rating: 3)
-review_2 = Review.create!(
   activity: activity_4,
-  user: user_4,
+  user: user4,
   description: "I mean, it was cool, I took my 2 children so they can understand the other side of the coin and I think it was worth it, but a little insercure tho.",
   rating: 3)
 

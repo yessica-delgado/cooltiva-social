@@ -44,24 +44,23 @@
       </div>
     <div class="col-md-6 mt-2" id= "user-info">
       <% if @activity.reviews.any? %>
-          <% count = 0 %>
-            <% 5.times do %>
-              <% if (@activity.reviews.pluck(:rating).inject(:+)/(@activity.reviews.count).to_f).ceil > count %>
-                <i class="fas fa-star"></i>
-              <% else %>
-                <i class="far fa-star"></i>
-              <% end %>
-          <% count += 1 %>
+        <% count = 0 %>
+        <% 5.times do %>
+          <% if (@activity.reviews.pluck(:rating).inject(:+)/(@activity.reviews.count).to_f).ceil > count %>
+            <i class="fas fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
           <% end %>
-          <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
+          <% count += 1 %>
+        <% end %>
+        <p><%= link_to "(Check reviews)", activity_reviews_path(@activity) %></p>
       <% else %>
-      <div class="stars-and-review-text-container justify-content-around">
         <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i> <i class="far fa-star"> </i>
         <p> This activity has no reviews <%= link_to "(Add one)", activity_reviews_path(@activity) %></p>
-     <% end %>
-
+      <% end %>
       <h2>This activity was created by <%= @user.nickname %></h2>
       <p>Click on the avatar to chat with him</p>
+
       <div class="row">
         <div class="col-9">
           <div class= "user-description">
@@ -75,6 +74,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="show-text-container">
