@@ -1,10 +1,17 @@
-.form-session-container {
+/* LOGIN FORM */
+
+.form-login-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  flex-grow: 10;
-  align-items: center;
 }
+
+.form-login-activity {
+  width: 40%;
+}
+
+
+/* LOGIN FORM ENDS */
+
 
 .form-session {
   display: flex;
