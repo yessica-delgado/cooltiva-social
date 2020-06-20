@@ -10,9 +10,13 @@
       </a>
       <!-- [...] -->
       <div class="search">
-  <input type="search" class="search-box" />
+        <%= form_tag activities_path, method: :get do %>
+        <div class="search-box">
+          <%= text_field_tag :query, params[:query] %>
+        <% end %>
+        </div>
   <span class="search-button">
-    <span class="search-icon"></span>
+    <span class="search-icon">  </span>
   </span>
 </div>
     </div>
@@ -26,7 +30,7 @@
 <div class="container-cards-title">
   <h1>Discover projects and organizations looking for you</h1>
 <div class="container-cards">
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-capontent-center">
 
     <div class="card min-vh-40 d-inline-block h-70" style="width: 18rem;">
       <div style="background-image: url('https://i.ibb.co/FhDCFLy/240320-covid19greeting-LHL.jpg')" class="img-card card-img-top" alt="..."> </div>

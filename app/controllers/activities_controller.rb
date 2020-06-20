@@ -10,8 +10,8 @@ class ActivitiesController < ApplicationController
         lng: activity.longitude
       }
     end
-
   end
+
 
   def new
     @activity = Activity.new
