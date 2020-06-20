@@ -12,11 +12,6 @@ body {
   background: $background-color;
 }
 
-#query {
-  background-color: transparent;
-  color : white;
-  border-color: transparent;
-
 #home-white-text {
   color: white;
 }
@@ -175,4 +170,8 @@ body {
     }
   }
 }
-// Specific CSS for your home-page
+
+#query {
+  background-color: transparent;
+  color: white;
+}
