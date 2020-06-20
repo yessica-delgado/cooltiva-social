@@ -17,6 +17,20 @@ body > div.container-fluid {
   border: 1px solid gray;
   border-radius: 8px;
 }
+.stars-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.fas {
+color: #fcbe37;
+margin: 2px;
+}
+
+.far {
+color: gray;
+margin: 2px;
+}
 
 img {
   position:relative;
@@ -65,8 +79,9 @@ img {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   height: 200px;
-  width: 200px;
+  width: 100%;
   border-left: 1px solid gray;
+  justify-content: center;
 }
 
 .pagination-container {
