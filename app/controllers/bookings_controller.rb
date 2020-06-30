@@ -19,7 +19,9 @@ class BookingsController < ApplicationController
 
   def index
     @bookings= policy_scope(Booking)
-    @bookings = current_user.bookings
+
+    @past_bookings = Booking.where('start_date < ?', DateTime.now)
+    @upcoming_bookings = Booking.where('start_date > ?', DateTime.now)
   end
 
   def destroy
