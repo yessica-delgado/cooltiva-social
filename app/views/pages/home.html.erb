@@ -19,12 +19,16 @@
       <button type="button" class="btn btn-primary">  Register now!   </button>
       </a>
       <!-- [...] -->
-      <div class="search">
-  <input type="search" class="search-box" />
-  <span class="search-button">
-    <span class="search-icon"></span>
-  </span>
-</div>
+      <%= form_tag(search_page_path, :method => "get", class: '123') do %>
+        <div class="search">
+          <input type="search" class="search-box" name="search">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </div>
+      <% end %>
+
+
     </div>
   </div>
 </div>

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :pages, only: [:home]
   resources :bookings, only: [ :index, :destroy]
+  get '/search' => 'pages#search', :as => 'search_page'
 end
 

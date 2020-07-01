@@ -1,0 +1,23 @@
+<div class="search-page-container">
+
+<h3>Search Result</h3>
+<div class="search-results-container">
+
+    <% @results.each do |result| %>
+    <%= link_to activity_path(result.id) do %>
+  <div class="search-titles-result">
+    <div class="search-title-result" >
+      <h5> <%= result.title %>
+    </h5>
+    <div class="creation-date-result">
+        Creation <%=(raw result.created_at).truncate(14) %> </h5>
+    </div>
+  </div>
+    <div class="search-description-result">
+      <%= result.who_description %>
+    </div>
+</div>
+    <% end %>
+    <% end %>
+
+</div>
