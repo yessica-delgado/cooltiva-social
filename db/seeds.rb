@@ -63,49 +63,6 @@ activity_1.photos.attach(io: file_two, filename: 'cooltiva2.png', content_type: 
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590540646/Captura_de_Pantalla_2020-05-26_a_la_s_19.50.35_prwyqq.png' )
 activity_1.photos.attach(io: file_three, filename: 'cooltiva3.png', content_type: 'image/png')
 
-user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Rodolfo is head director of Techo México, he has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
-profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1593736134/a6mtheld7mbrmty8jjjsuyv0wbfi.png' )
-user_2.photo.attach(io: profile_picture2, filename: 'pp2.png', content_type: 'image/png')
-activity_2 = Activity.create!(
-  title: "Techo",
-  category: sw,
-  user: user_2,
-  website: "https://techo.com",
-  who_description: "TECHO, also known as Un Techo para mi País (UTPMP) (Spanish for A Roof For My Country), is a nonprofit organization that mobilizes youth volunteers to fight extreme poverty in Latin America, by constructing transitional housing and implementing social inclusion programs. It was founded by a Jesuit priest, and working with more than 720,000 volunteers, it has constructed houses for over 102,400 families in 19 countries in Latin American and the Caribbean.",
-  why_description: "104 million people live in slums in Latin America. Families lack a proper home, and have no access to basic services, such as clean water, electricity or sewerage. They are exposed to cold, rain, dirt and pollution which generates many health problems. Adults are often unemployed and their children have to work from an early age to help support their family.",
-  what_description: "2 days groupal construction of 10 houses sponsored by The Coca-Cola Company at a vulnerable community for people in poverty situation. Transportation will be provided from the meeting point to the community and back.",
-  meeting_address: "coahuila 48, cuajimalpa",
-  activity_address: "coahuila 48, cuajimalpa",
-  capacity: 30,
-  donation: 100,
-  start_date: "20/06/2020",
-  end_date: "20/07/2020",
-  requirements: "Sunscreen, hammer, positive attitude, sleeping bag, full body pijama, 2 days change of clothing, gloves, no luxury tiems.")
-file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.01_l7j7dt.png')
-activity_2.photos.attach(io: file_two, filename: 'techo2.png', content_type: 'image/png')
-file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.17_sqtidd.png')
-activity_2.photos.attach(io: file_three, filename: 'techo3.png', content_type: 'image/png')
-review_1 = Review.create!(
-  activity: activity_1,
-  user: user_2,
-  description: "The produce and other groceries are fresh and delicious, and the service is super. Cooltiva connects you directly with local, sustainable growers and ranchers. I love their bicycle delivery! Also, it's more convenient than shopping at a farmers' market.",
-  rating: 5)
-review_2 = Review.create!(
-  activity: activity_2,
-  user: user2,
-  description: "I’m not going to lie, I had to sleep in the floor at a school and it was terrible for my back after a long day of work",
-  rating: 2)
-review_3 = Review.create!(
-  activity: activity_2,
-  user: user1,
-  description: "I think is a great exercise to re evaluate things worth in life, the families we built for incredibly nice",
-  rating: 5)
-review_4 = Review.create!(
-  activity: activity_2,
-  user: user5,
-  description: "I’d never had an experience like that, lots of hard work for someone who needs it and being able to know them as a person, it was nice",
-  rating: 4)
-
 user_3 = User.create!(nickname: "Lilia", email:"lilia@gmail.com", password:"123456789", persona_description: "Lilia is the founder of lutheransunset, she has been working to fight poverty and hunger for the last 3 years and now coordinates all activities along the country to change society for the better.")
 profile_picture3 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1591923776/1bhaj06fiwdp4i1z1lhsmfc8wzq7.png' )
 user_3.photo.attach(io: profile_picture3, filename: 'pp3.png', content_type: 'image/png')
@@ -163,6 +120,49 @@ review_1 = Review.create!(
   user: user4,
   description: "I mean, it was cool, I took my 2 children so they can understand the other side of the coin and I think it was worth it, but a little insercure tho.",
   rating: 3)
+
+ user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Rodolfo is head director of Techo México, he has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
+profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1593736134/a6mtheld7mbrmty8jjjsuyv0wbfi.png' )
+user_2.photo.attach(io: profile_picture2, filename: 'pp2.png', content_type: 'image/png')
+activity_2 = Activity.create!(
+  title: "Techo",
+  category: sw,
+  user: user_2,
+  website: "https://techo.com",
+  who_description: "TECHO, also known as Un Techo para mi País (UTPMP) (Spanish for A Roof For My Country), is a nonprofit organization that mobilizes youth volunteers to fight extreme poverty in Latin America, by constructing transitional housing and implementing social inclusion programs. It was founded by a Jesuit priest, and working with more than 720,000 volunteers, it has constructed houses for over 102,400 families in 19 countries in Latin American and the Caribbean.",
+  why_description: "104 million people live in slums in Latin America. Families lack a proper home, and have no access to basic services, such as clean water, electricity or sewerage. They are exposed to cold, rain, dirt and pollution which generates many health problems. Adults are often unemployed and their children have to work from an early age to help support their family.",
+  what_description: "2 days groupal construction of 10 houses sponsored by The Coca-Cola Company at a vulnerable community for people in poverty situation. Transportation will be provided from the meeting point to the community and back.",
+  meeting_address: "coahuila 48, cuajimalpa",
+  activity_address: "coahuila 48, cuajimalpa",
+  capacity: 30,
+  donation: 100,
+  start_date: "20/06/2020",
+  end_date: "20/07/2020",
+  requirements: "Sunscreen, hammer, positive attitude, sleeping bag, full body pijama, 2 days change of clothing, gloves, no luxury tiems.")
+file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.01_l7j7dt.png')
+activity_2.photos.attach(io: file_two, filename: 'techo2.png', content_type: 'image/png')
+file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.17_sqtidd.png')
+activity_2.photos.attach(io: file_three, filename: 'techo3.png', content_type: 'image/png')
+review_1 = Review.create!(
+  activity: activity_1,
+  user: user_2,
+  description: "The produce and other groceries are fresh and delicious, and the service is super. Cooltiva connects you directly with local, sustainable growers and ranchers. I love their bicycle delivery! Also, it's more convenient than shopping at a farmers' market.",
+  rating: 5)
+review_2 = Review.create!(
+  activity: activity_2,
+  user: user2,
+  description: "I’m not going to lie, I had to sleep in the floor at a school and it was terrible for my back after a long day of work",
+  rating: 2)
+review_3 = Review.create!(
+  activity: activity_2,
+  user: user1,
+  description: "I think is a great exercise to re evaluate things worth in life, the families we built for incredibly nice",
+  rating: 5)
+review_4 = Review.create!(
+  activity: activity_2,
+  user: user5,
+  description: "I’d never had an experience like that, lots of hard work for someone who needs it and being able to know them as a person, it was nice",
+  rating: 4)
 
 
 p "Created #{Activity.count} activities"
