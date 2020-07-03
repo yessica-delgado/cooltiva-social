@@ -79,32 +79,32 @@
 
 <div class="show-text-container">
   <div class="first-texts-container">
-     <div class="col-2 align-self-center"> <h1 class="ml-5" id="show-titles">Who</h1></div>
+     <div class="col-2 align-self-center"> <h2 class="ml-5" id="show-titles">Who</h1></div>
      <div class="col-10"> <p id="show-texts"><%= @activity.who_description %></p></div>
    </div>
    <div class="second-texts-container">
-     <div class="col-2 align-self-center"> <h1 class="ml-5" id="show-titles">Why</h1></div>
+     <div class="col-2 align-self-center"> <h2 class="ml-5" id="show-titles">Why</h1></div>
      <div class="col-10"> <p id="show-texts"><%= @activity.why_description %></p> </div>
   </div>
 
   <div class="third-texts-and-booking-container">
     <div class="third-texts-container">
       <div class="what-container">
-        <div class="col-2 align-self-center"> <h1 class="ml-5" id="show-titles">What</h1></div>
+        <div class="col-2 align-self-center"> <h2 class="ml-5" id="show-titles">What</h1></div>
         <div class="col-10"> <p class="ml-5 pl-4" id="show-texts"><%= @activity.what_description %></p></div>
       </div>
       <div class="when-container">
-        <div class="col-2 align-self-center"> <h1 class="ml-5" id="show-titles">When</h1></div>
+        <div class="col-2 align-self-center"> <h2 class="ml-5" id="show-titles">When</h1></div>
         <div class="col-10 align-self-center"> <p class="d-inline ml-5 pl-4"id="show-texts">From: <%= @activity.start_date %></p>
         <p class=" d-inline" id="show-texts">To: <%= @activity.end_date %></p></div>
       </div>
       <div class="where-container">
-        <div class="col-2 align-self-center"><h1 class="ml-5" id="show-titles">Where</h1></div>
+        <div class="col-2 align-self-center"><h2 class="ml-5" id="show-titles">Where</h1></div>
         <div class="col-10 align-self-center"><p class=" ml-5 pl-4 id="show-texts">Meeting point: <%= link_to @activity.meeting_address %></p>
         <p class="ml-5 pl-4 " id="show-texts">Activity: <%= link_to @activity.activity_address %></p></div>
       </div>
       <div class="donations-container">
-       <div class="col-2 align-self-center"> <h1 id="show-titles">Donation</h1></div>
+       <div class="col-2 align-self-center"> <h2 id="show-titles">Donation</h1></div>
         <div class="col-10 align-self-center"><p class=" ml-5 pl-4" id="show-texts">$<%= @activity.donation %>.00</p></div>
       </div>
          <h4 class=" pl-3" id="show-titles">Requirements for this activity:</h4>
@@ -113,7 +113,7 @@
     </div>
     <div class="bookings-container pl-5">
       <div class="col-10">
-      <h1>Book</h1>
+      <h2>Book</h1>
       <%= simple_form_for([@activity, @booking]) do |f| %>
         <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
         <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
