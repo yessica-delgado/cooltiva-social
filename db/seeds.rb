@@ -63,8 +63,8 @@ activity_1.photos.attach(io: file_two, filename: 'cooltiva2.png', content_type: 
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590540646/Captura_de_Pantalla_2020-05-26_a_la_s_19.50.35_prwyqq.png' )
 activity_1.photos.attach(io: file_three, filename: 'cooltiva3.png', content_type: 'image/png')
 
-user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Rodolfo is head director of Techo México, he has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
-profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592235723/free-profile-photo-whatsapp-4_hw6fgm.png' )
+user_2 = User.create!(nickname: "Yessica", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Yessica is head director of Techo México, she has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
+profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1592066007/T02NE0241-US8BY0S1F-6cb0fb5d07d7-512_bbhfox.jpg' )
 user_2.photo.attach(io: profile_picture2, filename: 'pp2.png', content_type: 'image/png')
 activity_2 = Activity.create!(
   title: "Techo",
@@ -81,7 +81,7 @@ activity_2 = Activity.create!(
   start_date: "20/06/2020",
   end_date: "20/07/2020",
   requirements: "Sunscreen, hammer, positive attitude, sleeping bag, full body pijama, 2 days change of clothing, gloves, no luxury tiems.")
-file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.01_l7j7dt.png')
+file_two = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1593634395/t8gf8zba61hi97tkj5mry7objhwh.png')
 activity_2.photos.attach(io: file_two, filename: 'techo2.png', content_type: 'image/png')
 file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1590541422/Captura_de_Pantalla_2020-05-26_a_la_s_20.03.17_sqtidd.png')
 activity_2.photos.attach(io: file_three, filename: 'techo3.png', content_type: 'image/png')
@@ -94,7 +94,7 @@ review_2 = Review.create!(
   activity: activity_2,
   user: user2,
   description: "I’m not going to lie, I had to sleep in the floor at a school and it was terrible for my back after a long day of work",
-  rating: 2)
+  rating: 3)
 review_3 = Review.create!(
   activity: activity_2,
   user: user1,
