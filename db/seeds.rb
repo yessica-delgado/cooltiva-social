@@ -64,7 +64,7 @@ file_three = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v159054
 activity_1.photos.attach(io: file_three, filename: 'cooltiva3.png', content_type: 'image/png')
 
 user_2 = User.create!(nickname: "Rodolfo", email: "rodolfo@gmail.com", password: "123456789", persona_description: "Rodolfo is head director of Techo México, he has been working to fight poverty and hunger for the last 5 years and now coordinates all activities along the country to change society for the better.")
-profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1591921248/3v62g7fcsm24llf1zkhj7afgiii4.png' )
+profile_picture2 = URI.open('https://res.cloudinary.com/dthacgw4y/image/upload/v1593736134/a6mtheld7mbrmty8jjjsuyv0wbfi.png' )
 user_2.photo.attach(io: profile_picture2, filename: 'pp2.png', content_type: 'image/png')
 activity_2 = Activity.create!(
   title: "Techo",
